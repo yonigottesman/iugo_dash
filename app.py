@@ -62,7 +62,6 @@ app.layout = html.Div(children=[
         )
 ])
 
-# Multiple components can update everytime interval gets fired.
 @app.callback(Output('coverage-graph', 'figure'),
               [Input('interval-component', 'n_intervals')])
 def update_graph_live(n):
