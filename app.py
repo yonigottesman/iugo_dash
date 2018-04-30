@@ -32,7 +32,7 @@ class Feed(db.Model):
 @server.route('/update', methods=['GET', 'POST'])
 def update():
     content = request.get_json(silent=False)
-    secondary_feeds = content['secondary_feeds']
+    secondary_feeds = content['secondaryFeeds']
     for feed_map in secondary_feeds:
         feed = Feed.query.filter(Feed.name==feed_map['name'])
         if feed.count() == 0:
